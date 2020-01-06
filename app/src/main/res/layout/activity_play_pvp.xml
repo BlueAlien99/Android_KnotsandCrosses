@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_play_pvp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    tools:context="com.bluealien99.knotsandcrosses.PlayPVP">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:id="@+id/topgrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:rowCount="1">
+
+            <com.bluealien99.knotsandcrosses.cellSquareTxt
+                android:id="@+id/knotsPts"
+                style="@style/gameStats"
+                android:layout_width="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:background="@color/Knot"
+                android:text="0" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:layout_column="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/gameStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:text="Games played"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/gamesPts"
+                    style="@style/gameStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:layout_column="3" />
+
+            <com.bluealien99.knotsandcrosses.cellSquareTxt
+                android:id="@+id/crossesPts"
+                style="@style/gameStats"
+                android:layout_width="0dp"
+                android:layout_column="4"
+                android:layout_columnWeight="1"
+                android:background="@drawable/crossmove"
+                android:text="0" />
+        </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/winrateknot"
+                style="@style/gameStats2"
+                android:layout_alignParentLeft="true"
+                android:text="0.0%" />
+
+            <FrameLayout
+                android:id="@+id/chronofl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/winratecross"
+                style="@style/gameStats2"
+                android:layout_alignParentRight="true"
+                android:text="0.0%" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAlignBottom="true">
+
+        <GridView
+            android:id="@+id/playGridR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:drawSelectorOnTop="true"
+            android:horizontalSpacing="16dp"
+            android:numColumns="3"
+            android:verticalSpacing="16dp" />
+
+        <ImageView
+            android:id="@+id/endgame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:adjustViewBounds="true"
+            android:alpha="0"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+        <com.bluealien99.knotsandcrosses.cellSquareImg
+            android:id="@+id/fade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:alpha="0"
+            android:background="@color/empty"
+            android:visibility="gone" />
+    </FrameLayout>
+</RelativeLayout>
